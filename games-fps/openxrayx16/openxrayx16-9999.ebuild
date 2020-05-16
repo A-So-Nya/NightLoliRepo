@@ -29,7 +29,8 @@ RDEPEND="
 "
 
 src_configure() {
-	mkdir $(WORKDIR}/bin && cd ${WORKDIR}/bin
+	mkdir ${WORKDIR}/bin
+	cd ${WORKDIR}/bin
 	if use debug; then
 		cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo
 	elif use clang; then
