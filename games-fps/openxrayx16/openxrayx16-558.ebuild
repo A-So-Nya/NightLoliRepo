@@ -41,13 +41,14 @@ src_configure() {
 	else
 		cmake ..
 	fi
+	echo ${PN}${PV}
 }
 
 src_unpack() {
 	if [[ -n ${A} ]]; then
 		unpack ${A}
 	fi
-	mv ${WORKDIR}/xray-16-${PV} ${WORKDIR}/${PN}${PV}
+	mv ${WORKDIR}/xray-16${PV} ${WORKDIR}/${PN}${PV}
 }
 
 
