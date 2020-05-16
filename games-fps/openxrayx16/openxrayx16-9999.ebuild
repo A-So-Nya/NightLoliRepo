@@ -19,6 +19,7 @@ RDEPEND="
 		dev-libs/crypto++
 		media-libs/libtheora
 		media-libs/libogg
+		media-libs/libvorbis
 		media-libs/libsdl2
 		dev-libs/lzo
 		media-libs/libjpeg-turbo
