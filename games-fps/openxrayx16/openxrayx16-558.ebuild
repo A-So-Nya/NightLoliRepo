@@ -40,15 +40,14 @@ src_configure() {
 	mkdir ${WORKDIR}/${PN}-${PV}/bin
 	cd ${WORKDIR}/${PN}-${PV}/bin
 	if use debug; then
-		cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo
+		cmake ${WORKDIR}/${PN}-${PV} -DCMAKE_BUILD_TYPE=RelWithDebInfo
 	elif use clang; then
-		CC=clang CXX=clang++ cmake ..
+		CC=clang CXX=clang++ cmake ${WORKDIR}/${PN}-${PV}
 	elif use debug && use clang; then
-		CC=clang CXX=clang++ cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo
+		CC=clang CXX=clang++ cmake ${WORKDIR}/${PN}-${PV} -DCMAKE_BUILD_TYPE=RelWithDebInfo
 	else
-		cmake ..
+		cmake ${WORKDIR}/${PN}-${PV}
 	fi
-	echo ${PN}${PV}
 }
 
 src_prepare() {
@@ -56,7 +55,7 @@ src_prepare() {
 }
 
 src_compile(){
-	emake
+	default
 }
 
 src_install() {
