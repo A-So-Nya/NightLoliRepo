@@ -23,6 +23,10 @@ RDEPEND="
 		dev-libs/lzo
 		media-libs/libjpeg-turbo
 		sys-libs/readline
+		media-libs/libglvnd
+		dev-libs/libpcre2
+		dev-libs/libpcre
+		app-arch/lzop
 
 		clang? (
 				sys-devel/clang
@@ -54,5 +58,6 @@ src_compile(){
 }
 
 src_install() {
+	cd ${WORKDIR}/${PN}-${PV}/bin
 	emake install
 }
