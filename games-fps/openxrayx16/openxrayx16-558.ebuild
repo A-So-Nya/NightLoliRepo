@@ -30,9 +30,7 @@ RDEPEND="
 "
 
 src_unpack() {
-	if [[ -n ${A} ]]; then
-		unpack ${A}
-	fi
+	default
 	mv ${WORKDIR}/xray-16-${PV} ${WORKDIR}/${PN}-${PV}
 }
 
@@ -50,12 +48,8 @@ src_configure() {
 	fi
 }
 
-src_prepare() {
-	default
-}
-
 src_compile(){
-	default
+	emake
 }
 
 src_install() {
