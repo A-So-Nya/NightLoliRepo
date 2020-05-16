@@ -38,17 +38,18 @@ src_configure() {
 	mkdir ${WORKDIR}/${PN}-${PV}/bin
 	cd ${WORKDIR}/${PN}-${PV}/bin
 	if use debug; then
-		cmake ${WORKDIR}/${PN}-${PV} -DCMAKE_BUILD_TYPE=RelWithDebInfo
+		cmake ${WORKDIR}/${PN}-${PV} -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_BINDIR=/usr/bin
 	elif use clang; then
-		CC=clang CXX=clang++ cmake ${WORKDIR}/${PN}-${PV}
+		CC=clang CXX=clang++ cmake ${WORKDIR}/${PN}-${PV} -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_BINDIR=/usr/bin
 	elif use debug && use clang; then
-		CC=clang CXX=clang++ cmake ${WORKDIR}/${PN}-${PV} -DCMAKE_BUILD_TYPE=RelWithDebInfo
+		CC=clang CXX=clang++ cmake ${WORKDIR}/${PN}-${PV} -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_BINDIR=/usr/bin
 	else
-		cmake ${WORKDIR}/${PN}-${PV}
+		cmake ${WORKDIR}/${PN}-${PV} -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_BINDIR=/usr/bin
 	fi
 }
 
 src_compile(){
+	cd ${WORKDIR}/${PN}-${PV}/bin
 	emake
 }
 
