@@ -24,8 +24,9 @@ RDEPEND="
 		media-libs/libjpeg-turbo
 		sys-libs/deadling
 
-		clang?
+		clang?(
 				sys-devel/clang
+		)
 "
 
 src_configure() {
