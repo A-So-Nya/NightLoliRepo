@@ -23,7 +23,7 @@ RDEPEND="
 		dev-libs/lzo
 		media-libs/libjpeg-turbo
 		sys-libs/readline
-		media-libs/libglvnd
+#		media-libs/libglvnd
 		dev-libs/libpcre2
 		dev-libs/libpcre
 		app-arch/lzop
