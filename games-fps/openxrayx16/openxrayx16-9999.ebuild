@@ -13,7 +13,7 @@ RESTRICT=""
 RDEPEND="
 		media-libs/glew
 		media-libs/freeimage
-		net-libs/loblockfile
+		net-libs/liblockfile
 		media-libs/openal
 		dev-cpp/tbb
 		dev-libs/crypto++
