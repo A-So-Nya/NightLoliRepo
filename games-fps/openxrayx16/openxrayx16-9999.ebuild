@@ -22,7 +22,7 @@ RDEPEND="
 		media-libs/libsdl2
 		dev-libs/lzo
 		media-libs/libjpeg-turbo
-		sys-libs/deadling
+		sys-libs/readline
 
 		clang? (
 				sys-devel/clang
