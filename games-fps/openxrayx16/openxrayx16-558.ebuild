@@ -2,7 +2,8 @@ EAPI=7
 
 DESCRIPTION="Open-source xray engine"
 HOMEPAGE="https://github.com/OpenXRay"
-SRC_URI="https://github.com/OpenXRay/xray-16/archive/${PV}.tar.gz"
+SRC_URI="https://github.com/OpenXRay/xray-16"
+FETCHCOMMAND="git clone" ${SRC_URI}
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
@@ -26,6 +27,7 @@ RDEPEND="
 		dev-libs/libpcre2
 		dev-libs/libpcre
 		app-arch/lzop
+		dev-vcs/git
 
 		clang? (
 				sys-devel/clang
