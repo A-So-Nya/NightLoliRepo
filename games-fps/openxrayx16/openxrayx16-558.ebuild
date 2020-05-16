@@ -2,8 +2,7 @@ EAPI=7
 
 DESCRIPTION="Open-source xray engine"
 HOMEPAGE="https://github.com/OpenXRay"
-SRC_URI="git://https://github.com/OpenXRay/xray-16.git"
-
+SRC_URI="https://github.com/OpenXRay/xray-16/archive/${PV}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
