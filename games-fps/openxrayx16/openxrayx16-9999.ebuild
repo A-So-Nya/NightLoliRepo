@@ -2,7 +2,7 @@ EAPI=7
 
 DESCRIPTION="Open-source xray engine"
 HOMEPAGE="https://github.com/OpenXRay"
-SRC_URI="git://https://github.com/OpenXRay/xray-16/tree/xd_dev.git"
+SRC_URI="git://https://github.com/OpenXRay/xray-16.git"
 
 LICENSE="BSD"
 SLOT="0"
