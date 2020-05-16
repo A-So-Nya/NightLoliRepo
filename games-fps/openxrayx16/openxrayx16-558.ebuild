@@ -1,9 +1,11 @@
-EAPI=7
+EAPI="5"
+
+inherit git-r3
 
 DESCRIPTION="Open-source xray engine"
 HOMEPAGE="https://github.com/OpenXRay"
-SRC_URI="https://github.com/OpenXRay/xray-16"
-FETCHCOMMAND="git clone" ${SRC_URI}
+EGIT_REPO_URI="https://github.com/OpenXRay/xray-16"
+
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
