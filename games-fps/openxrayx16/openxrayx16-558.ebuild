@@ -29,9 +29,16 @@ RDEPEND="
 		)
 "
 
+src_unpack() {
+	if [[ -n ${A} ]]; then
+		unpack ${A}
+	fi
+	mv ${WORKDIR}/xray-16-${PV} ${WORKDIR}/${PN}-${PV}
+}
+
 src_configure() {
-	mkdir ${WORKDIR}/bin
-	cd ${WORKDIR}/bin
+	mkdir ${WORKDIR}/${PN}-${PV}/bin
+	cd ${WORKDIR}/${PN}-${PV}/bin
 	if use debug; then
 		cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo
 	elif use clang; then
@@ -43,14 +50,6 @@ src_configure() {
 	fi
 	echo ${PN}${PV}
 }
-
-src_unpack() {
-	if [[ -n ${A} ]]; then
-		unpack ${A}
-	fi
-	mv ${WORKDIR}/xray-16${PV} ${WORKDIR}/${PN}${PV}
-}
-
 
 src_prepare() {
 	default
