@@ -1,5 +1,5 @@
 EAPI=7
-inherit git-r3 distutils-r1 cmake-utils
+inherit git-r3 cmake-utils
 DESCRIPTION="Open-source xray engine"
 HOMEPAGE="https://github.com/OpenXRay"
 SRC_URI=""
