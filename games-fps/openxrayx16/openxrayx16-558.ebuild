@@ -1,15 +1,13 @@
-EAPI="5"
-
-inherit git-r3
+EAPI="7"
 
 DESCRIPTION="Open-source xray engine"
 HOMEPAGE="https://github.com/OpenXRay"
-EGIT_REPO_URI="https://github.com/OpenXRay/xray-16"
+SRC_URI="https://github.com//OpenXRay/xray-16/archive/xd_dev.zip"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="clang debug"
+IUSE="clang debug libglvnd"
 RESTRICT=""
 
 RDEPEND="
@@ -34,11 +32,15 @@ RDEPEND="
 		clang? (
 				sys-devel/clang
 		)
+
+		libglvnd? (
+			media-libs/libglvnd
+		)
 "
 
 src_unpack() {
 	default
-	mv ${WORKDIR}/xray-16-${PV} ${WORKDIR}/${PN}-${PV}
+	mv ${WORKDIR}/xray-16-xd_dev ${WORKDIR}/${PN}-${PV}
 }
 
 src_configure() {
