@@ -39,11 +39,6 @@ RDEPEND="
 		)
 "
 
-src_unpack() {
-	default
-	mv ${WORKDIR}/xray-16-xd_dev ${WORKDIR}/${PN}-${PV}
-}
-
 src_configure() {
 	mkdir ${WORKDIR}/${PN}-${PV}/bin
 	cd ${WORKDIR}/${PN}-${PV}/bin
