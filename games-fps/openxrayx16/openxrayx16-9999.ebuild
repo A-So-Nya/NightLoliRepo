@@ -39,9 +39,6 @@ DEPEND="
 "
 RDEPEND=${DEPEND}
 
-S=${WORKDIR}/${PN}-${PV}
-BUILD_DIR=${WORKDIR}/${PN}-${PV}/bin
-
 src_prepare() {
 	cmake_src_prepare
 }
