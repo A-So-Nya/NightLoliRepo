@@ -5,7 +5,7 @@ DESCRIPTION="Open-source xray engine"
 HOMEPAGE="https://github.com/OpenXRay"
 EGIT_HAS_SUBMODULES="true"
 EGIT_PROJECT="xray-16"
-EGIT_REPO_URI="https://github.com/OpenXRay/xray-16"
+EGIT_REPO_URI="git@github.com:OpenXRay/xray-16.git"
 EGIT_OPTIONS="--recurse-submodules=yes"
 
 
