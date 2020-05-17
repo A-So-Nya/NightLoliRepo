@@ -1,5 +1,5 @@
 EAPI=7
-inherit git-r3 cmake cmake-utils.eclass
+inherit git-r3 cmake cmake-utils
 
 EGIT_REPO_URI="https://github.com/OpenXRay/xray-16.git"
 EGIT_BRANCH="xd_dev"
