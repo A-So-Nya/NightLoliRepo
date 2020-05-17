@@ -1,11 +1,11 @@
 EAPI=7
 inherit git-r3 cmake-utils
+
 DESCRIPTION="Open-source xray engine"
 HOMEPAGE="https://github.com/OpenXRay"
-SRC_URI=""
 EGIT_HAS_SUBMODULES="true"
 EGIT_PROJECT="xray-16"
-EGIT_REPO_URI="https://github.com/OpenXRay/xray-16.git"
+EGIT_REPO_URI="https://github.com/OpenXRay/xray-16"
 EGIT_OPTIONS="--recurse-submodules=yes"
 
 
