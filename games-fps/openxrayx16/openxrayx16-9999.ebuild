@@ -21,7 +21,7 @@ DEPEND="
 		dev-cpp/tbb
 		dev-libs/crypto++
 		media-libs/libtheora
-		media-libs/libogg
+s		media-libs/libogg
 		media-libs/libvorbis
 		media-libs/libsdl2
 		dev-libs/lzo
@@ -55,6 +55,8 @@ src_configure() {
 		CC=clang CXX=clang++ cmake ${WORKDIR}/${PN}-${PV} -DCMAKE_BUILD_TYPE=Release
 	elif use debug && use clang; then
 		CC=clang CXX=clang++ cmake ${WORKDIR}/${PN}-${PV} -DCMAKE_BUILD_TYPE=RelWithDebInfo
+	else
+		cmake
 }
 
 src_compile() {
