@@ -67,5 +67,5 @@ src_compile() {
 
 src_install() {
 	cd ${S}/bin
-	emake install
+	emake DESTDIR="${D}" install
 }
