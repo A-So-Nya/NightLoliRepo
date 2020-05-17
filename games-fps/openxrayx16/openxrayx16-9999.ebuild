@@ -1,17 +1,19 @@
 EAPI=7
-inherit git-r3 cmake-utils
+inherit git-r3 cmake cmake-utils.eclass
 
 EGIT_REPO_URI="https://github.com/OpenXRay/xray-16.git"
+EGIT_BRANCH="xd_dev"
 DESCRIPTION="Open-source xray engine"
 HOMEPAGE="https://github.com/OpenXRay"
+SRC_URI=""
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="clang debug libglvnd"
+IUSE="clang debug"
 RESTRICT=""
 
-RDEPEND="
+DEPEND="
 		media-libs/glew
 		media-libs/freeimage
 		net-libs/liblockfile
@@ -29,36 +31,33 @@ RDEPEND="
 		dev-libs/libpcre
 		app-arch/lzop
 		dev-vcs/git
+		media-libs/libglvnd
 
 		clang? (
 				sys-devel/clang
 		)
-
-		libglvnd? (
-			media-libs/libglvnd
-		)
 "
+RDEPEND=${DEPEND}
+
+S=${WORKDIR}/${PN}-${PV}
+BUILD_DIR=${WORKDIR}/${PN}-${PV}/bin
 
 src_configure() {
-	mkdir ${WORKDIR}/${PN}-${PV}/bin
-	cd ${WORKDIR}/${PN}-${PV}/bin
-	if use debug; then
-		cmake ${WORKDIR}/${PN}-${PV} -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_BINDIR=/usr/bin
-	elif use clang; then
-		CC=clang CXX=clang++ cmake ${WORKDIR}/${PN}-${PV} -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_BINDIR=/usr/bin
-	elif use debug && use clang; then
-		CC=clang CXX=clang++ cmake ${WORKDIR}/${PN}-${PV} -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_BINDIR=/usr/bin
+	if use clang; then
+		CMAKE_BINARY="CC=clang CXX=clang++ cmake"
 	else
-		cmake ${WORKDIR}/${PN}-${PV} -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_BINDIR=/usr/bin
+		CMAKE_BINARY="cmake"
 	fi
-}
 
-src_compile(){
-	cd ${WORKDIR}/${PN}-${PV}/bin
-	emake
+	if use debug; then 
+		CMAKE_BUILD_TYPE=RelWithDebInfo
+	else
+		CMAKE_BUILD_TYPE=Release
+	fi
+
+	cmake_src_configure
 }
 
 src_install() {
-	cd ${WORKDIR}/${PN}-${PV}/bin
-	emake install
+	cmake_src_install
 }
