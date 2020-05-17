@@ -50,13 +50,13 @@ src_configure() {
 	mkdir ${S}/bin
 	cd ${S}/bin
 	if use debug; then
-		cmake ${S} -DCMAKE_BUILD_TYPE=RelWithDebInfo
+		cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo
 	elif use clang; then
-		CC=clang CXX=clang++ cmake ${WORKDIR}/${PN}-${PV} -DCMAKE_BUILD_TYPE=Release
+		CC=clang CXX=clang++ cmake .. -DCMAKE_BUILD_TYPE=Release
 	elif use debug && use clang; then
-		CC=clang CXX=clang++ cmake ${WORKDIR}/${PN}-${PV} -DCMAKE_BUILD_TYPE=RelWithDebInfo
+		CC=clang CXX=clang++ cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo
 	else
-		cmake
+		cmake ..
 	fi
 }
 
