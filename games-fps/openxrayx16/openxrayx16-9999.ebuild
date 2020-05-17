@@ -1,10 +1,8 @@
 EAPI=7
-inherit git-r3
-SCM="git-r3"
+inherit git-r3 distutils-r1 cmake-utils
 DESCRIPTION="Open-source xray engine"
 HOMEPAGE="https://github.com/OpenXRay"
 SRC_URI=""
-EGIT_BRANCH="xd_dev"
 EGIT_HAS_SUBMODULES="true"
 EGIT_PROJECT="xray-16"
 EGIT_REPO_URI="https://github.com/OpenXRay/xray-16.git"
