@@ -1,18 +1,18 @@
 EAPI=7
 inherit git-r3 cmake
 
-EGIT_REPO_URI="https://github.com/OpenXRay/xray-16.git"
-EGIT_BRANCH="xd_dev"
 DESCRIPTION="Open-source xray engine"
 HOMEPAGE="https://github.com/OpenXRay"
+LICENSE="BSD"
+
+EGIT_REPO_URI="https://github.com/OpenXRay/xray-16.git"
+EGIT_BRANCH="xd_dev"
 SRC_URI=""
 
-LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="clang debug"
 RESTRICT=""
-
 DEPEND="
 		media-libs/glew
 		media-libs/freeimage
@@ -45,6 +45,9 @@ DEPEND="
 RDEPEND=${DEPEND}
 
 S=${WORKDIR}/${PN}-${PV}
+
+CMAKE_USE_DIR=${S}
+
 BUILD_DIR=${S}/bin
 
 src_prepare() {
