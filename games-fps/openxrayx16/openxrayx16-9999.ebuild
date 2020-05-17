@@ -21,7 +21,7 @@ DEPEND="
 		dev-cpp/tbb
 		dev-libs/crypto++
 		media-libs/libtheora
-s		media-libs/libogg
+		media-libs/libogg
 		media-libs/libvorbis
 		media-libs/libsdl2
 		dev-libs/lzo
