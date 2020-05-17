@@ -44,7 +44,7 @@ DEPEND="
 "
 RDEPEND=${DEPEND}
 
-S=${WORKDIR}/{PN}-{PV}
+S=${WORKDIR}/${PN}-${PV}
 BUILD_DIR=${S}
 
 src_prepare() {
