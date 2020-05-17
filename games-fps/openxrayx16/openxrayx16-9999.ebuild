@@ -45,7 +45,7 @@ DEPEND="
 RDEPEND=${DEPEND}
 
 S=${WORKDIR}/${PN}-${PV}
-BUILD_DIR=${S}
+BUILD_DIR=${S}/bin
 
 src_prepare() {
 	cmake_src_prepare
