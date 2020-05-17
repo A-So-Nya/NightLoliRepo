@@ -57,11 +57,13 @@ src_configure() {
 		CC=clang CXX=clang++ cmake ${WORKDIR}/${PN}-${PV} -DCMAKE_BUILD_TYPE=RelWithDebInfo
 	else
 		cmake
+	fi
 }
 
 src_compile() {
 	cd ${S}/bin
 	emake
+}
 
 src_install() {
 	cd ${S}/bin
