@@ -1,5 +1,5 @@
 EAPI=7
-inherit git-r3 cmake cmake-utils
+inherit git-r3 cmake
 
 EGIT_REPO_URI="https://github.com/OpenXRay/xray-16.git"
 EGIT_BRANCH="xd_dev"
@@ -32,12 +32,20 @@ DEPEND="
 		app-arch/lzop
 		dev-vcs/git
 		media-libs/libglvnd
+		dev-util/cmake
+		
+		!clang? (
+			>sys-devel/gcc-7.5.0
+		)
 
 		clang? (
 				sys-devel/clang
 		)
 "
 RDEPEND=${DEPEND}
+
+S=${WORKDIR}/{PN}-{PV}
+BUILD_DIR=${S}
 
 src_prepare() {
 	cmake_src_prepare
