@@ -42,6 +42,10 @@ RDEPEND=${DEPEND}
 S=${WORKDIR}/${PN}-${PV}
 BUILD_DIR=${WORKDIR}/${PN}-${PV}/bin
 
+src_prepare() {
+	cmake_src_prepare
+}
+
 src_configure() {
 	if use clang; then
 		CMAKE_BINARY="CC=clang CXX=clang++ cmake"
