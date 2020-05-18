@@ -19,7 +19,7 @@ DEPEND="
 		net-libs/liblockfile
 		media-libs/openal
 		dev-cpp/tbb
-		dev-libs/crypto++
+		=dev-libs/crypto++-5.6.5-r1
 		media-libs/libtheora
 		media-libs/libogg
 		media-libs/libvorbis
