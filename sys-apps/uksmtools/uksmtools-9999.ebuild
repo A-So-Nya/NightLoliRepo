@@ -18,7 +18,7 @@ DEPEND="
 "
 src_install(){
 	make \
-	prefix=/usr/bin \
+	prefix=${ED}/usr/bin \
 	datadir=${ED}/usr/share \
 	infodir=${ED}/usr/share/info \
 	localstatedir=${ED}/var/lib \
