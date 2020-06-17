@@ -16,3 +16,7 @@ DEPEND="
 	sys-devel/gcc
 	sys-devel/make
 "
+
+src_install() {
+	emake DESTDIR="${D}" install
+}
