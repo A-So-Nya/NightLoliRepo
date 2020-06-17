@@ -17,5 +17,14 @@ DEPEND="
 	sys-devel/make
 "
 src_install(){
-	einstall
+	make \
+	prefix=/usr/bin \
+	datadir=${ED}/usr/share \
+	infodir=${ED}/usr/share/info \
+	localstatedir=${ED}/var/lib \
+	mandir=${ED}/usr/share/man \
+	sysconfdir=${ED}/etc \
+	${EXTRA_EINSTALL} \
+	make options \
+	install
 }
