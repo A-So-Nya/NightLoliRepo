@@ -1,4 +1,4 @@
-EAPI=7
+EAPI=5
 inherit git-r3
 
 DESCRIPTION="Small set of tools to control UKSM"
