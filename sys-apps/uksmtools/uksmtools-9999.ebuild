@@ -5,8 +5,6 @@ DESCRIPTION="Small set of tools to control UKSM"
 HOMEPAGE="https://github.com/mantheman/uksmtools"
 LICENSE="GPL-2"
 
-EPREFIX=/usr/bin
-
 EGIT_REPO_URI="https://github.com/mantheman/uksmtools.git"
 EGIT_BRANCH="master"
 SRC_URI=""
@@ -18,3 +16,6 @@ DEPEND="
 	sys-devel/gcc
 	sys-devel/make
 "
+src_install(){
+	einstall
+}
