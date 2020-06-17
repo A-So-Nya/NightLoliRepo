@@ -1,9 +1,9 @@
-EAPI=5
+EAPI=7
 inherit git-r3
 
 DESCRIPTION="Small set of tools to control UKSM"
 HOMEPAGE="https://github.com/mantheman/uksmtools"
-LICENSE="GPL-2"
+LICENSE="GPL-3+"
 
 EGIT_REPO_URI="https://github.com/mantheman/uksmtools.git"
 EGIT_BRANCH="master"
