@@ -17,6 +17,11 @@ DEPEND="
 	sys-devel/make
 "
 
+src_configure() {
+	econf \
+		--bindir="${EPREFIX}"/bin
+}
+
 src_install() {
 	emake DESTDIR="${D}" install
 }
