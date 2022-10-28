@@ -6,7 +6,7 @@ HOMEPAGE="https://github.com/OpenXRay"
 LICENSE="BSD"
 
 EGIT_REPO_URI="https://github.com/OpenXRay/xray-16.git"
-EGIT_BRANCH="xd_dev"
+EGIT_BRANCH="dev"
 SRC_URI=""
 
 SLOT="0"
